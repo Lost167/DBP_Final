@@ -1,0 +1,22 @@
+﻿@model HansenProject3.Models.Customer
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New Customer</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "Customer", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.CustomerID /*, new { @class = "form-control", placeholder = "12" }*/)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "John Smith" })
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control", placeholder = "1420 North Charles Street" })
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "New York" })
+        @Html.TextBoxFor(x => x.State, new { @class = "form-control", placeholder = "AL" })
+        @Html.TextBoxFor(x => x.ZipCode, new { @class = "form-control", placeholder = "10044" })
+
+        <input type="submit" value="Submit" class="btn btn-info" style="background-color: limegreen; border-color: green;" />
+        <a class="btn btn-info" href="/Customer/AllCustomers">Return to List</a>
+        // <a class="btn btn-danger" href="/Customer/Delete/@Model.Id">Delete</a>
+    }
+</div>
