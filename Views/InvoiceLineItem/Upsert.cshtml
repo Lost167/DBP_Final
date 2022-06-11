@@ -1,0 +1,20 @@
+﻿@model HansenProject3.Models.InvoiceLineItem
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New Invoice Line Item</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "InvoiceLineItem", FormMethod.Post))
+    {
+        <span>Invoice ID</span>@Html.TextBoxFor(x => x.InvoiceID, new { @class = "form-control", placeholder = "18" })
+        <span>Product Code</span>@Html.TextBoxFor(x => x.ProductCode, new { @class = "form-control", placeholder = "A46V" })
+        <span>Unit Price</span>@Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", placeholder = "57.50 ($)" })
+        <span>Quantity</span>@Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", placeholder = "1" })
+        <span>Item Total</span>@Html.TextBoxFor(x => x.ItemTotal, new { @class = "form-control", placeholder = "57.50 ($)" })
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+        <a class="btn btn-primary" href="/InvoiceLineItem/AllInvoiceLineItems">Return to List</a>
+    }
+</div>

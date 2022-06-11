@@ -13,7 +13,12 @@ namespace HansenProject3.Controllers
 
     public class CustomerController : Controller
     {
-        // GET: Customer
+        /// <summary>
+        /// Get all data listed inside of the Customers table
+        /// </summary>
+        /// <param name="id">Used to check ID and search through table</param>
+        /// <param name="sortBy">Used to check which column is being sorted</param>
+        /// <returns></returns>
         public ActionResult AllCustomers(string id, int sortBy = 0)
         {
             BooksEntities context = new BooksEntities();
@@ -69,6 +74,11 @@ namespace HansenProject3.Controllers
             return View(customers);
         }
 
+        /// <summary>
+        /// Update existing data into the table
+        /// </summary>
+        /// <param name="id">Checks if ID matches an existing ID to update</param>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult Upsert(int id)
         {
@@ -83,6 +93,11 @@ namespace HansenProject3.Controllers
             return View(customers);
         }
 
+        /// <summary>
+        /// Add new data into the table
+        /// </summary>
+        /// <param name="newInvoiceLineItems">Sent in params to add new item to table</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Upsert(Customer newCustomer)
         {
@@ -112,6 +127,11 @@ namespace HansenProject3.Controllers
             return RedirectToAction("AllCustomers");
         }
 
+        /// <summary>
+        /// Deletes existing data from the table
+        /// </summary>
+        /// <param name="id">Used to check ID matches an existing ID to delete row from table</param>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult Delete(string id)
         {

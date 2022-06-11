@@ -1,0 +1,51 @@
+﻿@model List<HansenProject3.Models.InvoiceLineItem>
+@{
+    ViewBag.Title = "All Invoice Line Items";
+}
+
+<h1 id="AllHeader">All Invoice Line Items</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <input id="txtSearch" type="text" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="col-md-7">
+        <input type="button" class="btn btn-primary" value="Search" onclick="Sortable.Search()">
+        <a class="btn btn-primary" href="/InvoiceLineItem/Upsert/0">Add New</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th onclick="Sortable.Sort(0)">Invoice ID</th>
+            <th onclick="Sortable.Sort(1)">Product Code</th>
+            <th onclick="Sortable.Sort(2)">Unit Price</th>
+            <th onclick="Sortable.Sort(3)">Quantity</th>
+            <th onclick="Sortable.Sort(4)">Item Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoiceLineItem in Model)
+        {
+            <tr>
+                <td>@invoiceLineItem.InvoiceID</td>
+                <td>@invoiceLineItem.ProductCode</td>
+                <td>@invoiceLineItem.UnitPrice</td>
+                <td>@invoiceLineItem.Quantity</td>
+                <td>@invoiceLineItem.ItemTotal</td>
+                <td>
+                    <a class="btn btn-success" href="/InvoiceLineItem/Upsert/@invoiceLineItem.InvoiceID">Update</a>
+                    <a class="btn btn-danger" href="/InvoiceLineItem/Delete/@invoiceLineItem.InvoiceID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    window.onload = function () {
+        Sortable.baseUrl = '/Customer/AllCustomers/';
+    }
+</script>

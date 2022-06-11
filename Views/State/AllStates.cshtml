@@ -1,0 +1,45 @@
+﻿@model List<HansenProject3.Models.State>
+@{
+    ViewBag.Title = "AllStates";
+}
+
+<h1 id="AllHeader">All States</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <input id="txtSearch" type="text" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="col-md-7">
+        <input type="button" class="btn btn-primary" value="Search" onclick="Sortable.Search()">
+        <a class="btn btn-primary" href="/State/Upsert/0">Add New</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th onclick="Sortable.Sort(0)">State Code</th>
+            <th onclick="Sortable.Sort(1)">State Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var state in Model)
+        {
+            <tr>
+                <td>@state.StateCode</td>
+                <td>@state.StateName</td>
+                <td>
+                    <a class="btn btn-success" href="/State/Upsert/@state.StateCode">Update</a>
+                    <a class="btn btn-danger" href="/State/Delete/@state.StateCode">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    window.onload = function () {
+        Sortable.baseUrl = '/State/AllStates/';
+    }
+</script>

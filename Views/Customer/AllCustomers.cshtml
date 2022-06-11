@@ -10,8 +10,8 @@
         <input id="txtSearch" type="text" class="form-control" placeholder="Search..." />
     </div>
     <div class="col-md-7">
-        <input type="button" class="btn btn-info" value="Search" onclick="Sortable.Search()">
-        <a class="btn btn-info" href="/Customer/Upsert/0">Add New</a>
+        <input type="button" class="btn btn-primary" value="Search" onclick="Sortable.Search()">
+        <a class="btn btn-primary" href="/Customer/Upsert/0">Add New</a>
     </div>
 </div>
 
@@ -37,7 +37,10 @@
             <td>@customer.City</td>
             <td>@customer.State</td>
             <td>@customer.ZipCode</td>
-            <td><a href="/Customer/Upsert/@customer.CustomerID">Update</a></td>
+            <td>
+                <a class="btn btn-success" href="/Customer/Upsert/@customer.CustomerID">Update</a>
+                <a class="btn btn-danger" href="/Customer/Delete/@customer.CustomerID">Delete</a>
+            </td>
         </tr>
         }
     </tbody>

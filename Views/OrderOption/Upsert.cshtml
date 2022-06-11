@@ -1,0 +1,18 @@
+﻿@model HansenProject3.Models.OrderOption
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New Order Option</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "OrderOption", FormMethod.Post))
+    {
+        <span>Sales Tax Rate</span>@Html.TextBoxFor(x => x.SalesTaxRate, new { @class = "form-control", placeholder = "0.0750" })
+        <span>First Book Ship Charge</span>@Html.TextBoxFor(x => x.FirstBookShipCharge, new { @class = "form-control", placeholder = "3.75 ($)" })
+        <span>Additional Book Charge</span>@Html.TextBoxFor(x => x.AdditionalBookShipCharge, new { @class = "form-control", placeholder = "1.25 ($)" })
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+        <a class="btn btn-primary" href="/OrderOptions/AllOrderOptions">Return to List</a>
+    }
+</div>

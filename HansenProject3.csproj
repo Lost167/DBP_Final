@@ -129,6 +129,8 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\InvoiceLineItemController.cs" />
+    <Compile Include="Controllers\OrderOptionController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,6 +181,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\geoapify.css" />
+    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -213,6 +216,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -230,6 +234,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Customer\AllCustomers.cshtml" />
     <Content Include="Views\Customer\Upsert.cshtml" />
+    <Content Include="Views\State\AllStates.cshtml" />
+    <Content Include="Views\State\Upsert.cshtml" />
+    <Content Include="Views\Product\AllProducts.cshtml" />
+    <Content Include="Views\Invoice\AllInvoices.cshtml" />
+    <Content Include="Views\Invoice\Upsert.cshtml" />
+    <Content Include="Views\Product\Upsert.cshtml" />
+    <Content Include="Views\OrderOption\AllOrderOptions.cshtml" />
+    <Content Include="Views\InvoiceLineItem\AllInvoiceLineItems.cshtml" />
+    <Content Include="Views\InvoiceLineItem\Upsert.cshtml" />
+    <Content Include="Views\OrderOption\Upsert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -247,11 +261,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Invoice\" />
-    <Folder Include="Views\Product\" />
-    <Folder Include="Views\State\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

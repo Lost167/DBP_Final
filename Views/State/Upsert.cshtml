@@ -1,0 +1,17 @@
+﻿@model HansenProject3.Models.State
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New State</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "State", FormMethod.Post))
+    {
+        <span>State Code</span>@Html.TextBoxFor(x => x.StateCode, new { @class = "form-control", placeholder = "NY" })
+        <span>State Name</span>@Html.TextBoxFor(x => x.StateName, new { @class = "form-control", placeholder = "New York" })
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+        <a class="btn btn-primary" href="/State/AllStates">Return to List</a>
+    }
+</div>

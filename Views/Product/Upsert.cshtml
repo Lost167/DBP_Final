@@ -1,0 +1,19 @@
+﻿@model HansenProject3.Models.Product
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New Product</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "Product", FormMethod.Post))
+    {
+        <span>Product Code</span>@Html.TextBoxFor(x => x.ProductCode, new { @class = "form-control", placeholder = "AB12" })
+        <span>Description</span>@Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "Javascript for Dummies" })
+        <span>Unit Price</span>@Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", placeholder = "55.50 ($)" })
+        <span>Quantity</span>@Html.TextBoxFor(x => x.OnHandQuantity, new { @class = "form-control", placeholder = "2048" })
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+        <a class="btn btn-primary" href="/Product/AllProducts">Return to List</a>
+    }
+</div>

@@ -1,0 +1,32 @@
+﻿
+/* Card css */
+.card {
+    color: red;
+    border: solid thin black;
+}
+
+/* View css (tables) */
+#AllHeader {
+    color: darkblue;
+    border-bottom: solid thin orange;
+    margin-left: 0.5em;
+}
+
+table {
+    border: solid thin black;
+    background-color: #ececec;
+    margin: 1em;
+}
+
+input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+
+/* Upsert css (form) */
+a {
+    margin-top: 0.5em;
+}
+
+/* Footer css */

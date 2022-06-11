@@ -1,0 +1,49 @@
+﻿@model List<HansenProject3.Models.Product>
+@{
+    ViewBag.Title = "AllProducts";
+}
+
+<h1 id="AllHeader">All Products</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <input id="txtSearch" type="text" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="col-md-7">
+        <input type="button" class="btn btn-primary" value="Search" onclick="Sortable.Search()">
+        <a class="btn btn-primary" href="/Product/Upsert/0">Add New</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th onclick="Sortable.Sort(0)">Product Code</th>
+            <th onclick="Sortable.Sort(1)">Description</th>
+            <th onclick="Sortable.Sort(2)">Unit Price</th>
+            <th onclick="Sortable.Sort(3)">On Hand Quantity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductCode</td>
+                <td>@product.Description</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.OnHandQuantity</td>
+                <td>
+                    <a class="btn btn-success" href="/Customer/Upsert/@product.ProductCode">Update</a>
+                    <a class="btn btn-danger" href="/Customer/Delete/@product.ProductCode">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    window.onload = function () {
+        Sortable.baseUrl = '/Product/AllProducts/';
+    }
+</script>

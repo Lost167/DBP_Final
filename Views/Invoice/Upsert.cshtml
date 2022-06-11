@@ -1,0 +1,22 @@
+﻿@model HansenProject3.Models.Invoice
+@{
+    ViewBag.Title = "Upsert";
+}
+
+<h1 id="AllHeader">Add New Invoice</h1>
+
+<div id="formBox">
+    @using (Html.BeginForm("Upsert", "Invoice", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.InvoiceID /*, new { @class = "form-control", placeholder = "12" }*/)
+        <span>Customer ID</span>@Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control", placeholder = "20" })
+        <span>Invoice Date</span>@Html.TextBoxFor(x => x.InvoiceDate, new { @class = "form-control", placeholder = "date" })
+        <span>Product Total</span>@Html.TextBoxFor(x => x.ProductTotal, new { @class = "form-control", placeholder = "150.00 ($)" })
+        <span>Sales Tax</span>@Html.TextBoxFor(x => x.SalesTax, new { @class = "form-control", placeholder = "11.70 ($)" })
+        <span>Shipping</span>@Html.TextBoxFor(x => x.Shipping, new { @class = "form-control", placeholder = "10.00 ($)" })
+        <span>Invoice Total</span>@Html.TextBoxFor(x => x.InvoiceTotal, new { @class = "form-control", placeholder = "171.70 ($)" })
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+        <a class="btn btn-primary" href="/Invoice/AllInvoices">Return to List</a>
+    }
+</div>
